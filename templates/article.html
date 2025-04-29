@@ -1,0 +1,43 @@
+{{ define "article" }}
+<div class="article-grid">
+    <div class="article-container">
+        <div class="article-meta">
+            <span>{{.Date}}</span>
+            <span>{{.Category}}</span>
+            <span>BY {{.Author}}</span>
+            <span>{{.ReadTime}} MIN READ</span>
+        </div>
+
+        <h1 class="article-title">{{.Title}}</h1>
+
+        <div class="article-content">
+            {{.Content}}
+
+            <div class="article-footer">
+                <div class="article-tags">
+                    {{range .Tags}} <a href="#" class="article-tag">{{.}} </a> {{end}}
+                </div>
+                <!-- 
+                <div class="article-share">
+                    <a href="#" class="share-button">T</a>
+                    <a href="#" class="share-button">L</a>
+                    <a href="#" class="share-button">G</a>
+                </div>
+            -->
+            </div>
+
+            <!--
+            <div class="author-box">
+                <div class="author-avatar">{{firstChar .Author}}</div>
+                <div class="author-info">
+                    <h4 class="author-name">{{.Author}}</h4>
+                    <p class="author-bio">Security researcher focused on low-level exploitation and vulnerability discovery.</p>
+                </div>
+            </div>
+        -->
+        </div>
+    </div>
+
+    <!-- {{ template "sidebar" . }} -->
+</div>
+{{ end }}
